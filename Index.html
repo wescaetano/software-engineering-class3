@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tela de Login</title>
+  <title>Cadastro de Usuário</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="login-container">
-    <h1>Login</h1>
-    <form id="loginForm">
-      <input type="text" id="usuario" placeholder="Usuário">
-      <input type="password" id="senha" placeholder="Senha">
-      <button type="submit">Entrar</button>
-      <p id="mensagem"></p>
+    <h1>Cadastro</h1>
+    <form id="cadastroForm">
+        <input type="text" id="nome" placeholder="Nome completo" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <input type="password" id="senhaCadastro" placeholder="Senha" required>
+        <button type="submit">Cadastrar</button>
     </form>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+  document.getElementById("cadastroForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Aqui você poderia salvar os dados localmente (opcional)
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "login.html"; // redireciona para o login
+  });
+</script>
 </body>
 </html>
